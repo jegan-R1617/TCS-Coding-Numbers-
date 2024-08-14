@@ -1,0 +1,29 @@
+Problem statement
+A prime number is a positive integer that is divisible by exactly 2 integers, 1 and the number itself.
+You are given a number 'n'.
+Find out whether 'n' is prime or not.
+
+Example :
+Input: 'n' = 5
+Output: YES
+
+Explanation: 5 is only divisible by 1 and 5. 2, 3 and 4 do not divide 5.
+**************************************************************************************************************************
+code:
+import java.util.*;
+public class Main {
+	public static void main(String[]args) {
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		sc.close();
+		if(num==1) 
+			System.out.println("NO");
+		for(int i=2;i*i<=num;i++){
+			if(num%i==0){
+				System.out.print("NO");
+				return;
+			}
+		}
+		System.out.println("YES");
+	}
+}
