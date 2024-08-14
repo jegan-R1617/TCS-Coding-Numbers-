@@ -1,0 +1,42 @@
+Problem statement
+Check whether a given number ’n’ is a palindrome number.
+
+Note :
+Palindrome numbers are the numbers that don't change when reversed.
+You don’t need to print anything. Just implement the given function.
+Example:
+Input: 'n' = 51415
+Output: true
+Explanation: On reversing, 51415 gives 51415.
+
+****************************************************************************************************************************888
+code:
+
+import java.util.*;
+public class Main {
+    static boolean isPalindrome(int num){
+    	if(num<0) {
+    		num*=-1;
+    	}
+        int temp=num;
+        int rev=0;
+        while(num>0){
+            rev=(rev*10)+(num%10);
+            num/=10;
+        }
+        if(rev==temp)
+         return true;
+        else
+         return false;
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+		if(num<10 && num>-10)
+			System.out.print("true");
+		else if(isPalindrome(num))
+	        System.out.print("true");
+		else
+		   System.out.print("false");
+	}
+}
